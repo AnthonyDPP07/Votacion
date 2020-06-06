@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>VotaBien.Org · Listado de Candidatos</title>
+    <!-- End Facebook Pixel Code -->
+    <link rel="stylesheet" href="css/">
+</head>
+<body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white" style="display: flex; justify-content: center; align-items: center;">
+        <img src="/img/votalogo1.png" style="padding-right:10%" />
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-dark header-text" href="/">Inicio</a>
+            <a class="p-2 text-dark header-text" href="/Candidate/Start">Registrar Candidato</a>
+            <a class="p-2 text-dark header-text" href="/Candidate/Search">Buscar Candidatos</a>
+            <a class="p-2 text-dark header-text" href="https://grupoaccioncristianard.org" target="_blank">Sobre Nosotros</a>
+            <a class="p-2 text-dark header-text" href="/FAQ/Public">F.A.Q.</a>
+        </nav>
+    </div>
+    <div style="background-color:#FEEC48; display: flex; justify-content: center; align-items: center; height: 220px;">
+        <h1 class="display-4" style="color: #33A7DF; font-weight:bold !important">Listado de Candidatos</h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <form method="get" id="formSearch" action="/Candidate/Search">
+                    <div class="pricing-header py-2 mx-auto">
+                        <h4 class="mb-3">Busqueda de Candidatos</h4>
+                        <input type="hidden" name="CurrentPage" id="CurrentPage" value="3" />
+                        <div class="row">
+                            <div class="col-md-5 mb-3 autocomplete">
+                                <label for="firstName">Nombre del Candidato</label>
+                                <input type="search" class="form-control" id="FullName" name="FullName" placeholder="" autocomplete="off">
+                                <a href="javascript:void(0)" style="font-size:small" id="advance-search-btn">Busqueda Avanzada</a>
+                            </div>
+                            <div class="col-md-5 mb-3">
+                                <label for="lastName">Provincia</label>
+                                <select name="ProvinceId" class="form-control"><option value="">-- SELECCIONE --</option>
+<option value="33">NACIONAL</option>
+<option value="1">DISTRITO NACIONAL</option>
+<option value="2">LA ALTAGRACIA</option>
+<option value="3">AZUA</option>
+<option value="4">MARIA TRINIDAD SANCHEZ</option>
+<option value="5">BAHORUCO</option>
+<option value="6">BARAHONA</option>
+<option value="7">DAJABON</option>
+<option value="8">DUARTE</option>
+<option value="9">EL SEIBO</option>
+</select>
+                                <small>Aviso Legal: <a href="javascript:void(0)" class="read-legal-warning">(LEER)</a></small>
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <button class="btn btn-primary btn-block disabled" type="submit" id="btnFind">Buscar...</button>
+                                <button class="btn btn-secondary btn-block" type="submit" id="btnClean">Cancelar</button>
+                            </div>
+
+                            <div class="col-md-12 mb-3 LegalWarning" style="display:none; text-align:justify">
+                                <strong>AVISO LEGAL</strong>. La búsqueda, investigación, recepción y difusión de la
+                                información contenida en este sitio son actividades protegidas por el
+                                derecho fundamental de acceso a la información establecido en el art.
+                                49 literal 1 de la Constitución Dominicana, así como en la Ley 200-04
+                                sobre Libre Acceso a la Información.<br /><br /> Los datos personales han sido
+                                obtenidos de fuentes de acceso público o directamente de los titulares
+                                de la información. Su tratamiento, almacenamiento y publicación es
+                                realizado de conformidad con lo establecido en la Ley 172-13 de
+                                Protección Integral de los Datos Personales.<br /><br /> No somos responsables del
+                                destino o uso que los usuarios o terceros pudieran dar a estas
+                                informaciones. Si considera que alguna información es inexacta,
+                                errónea o incompleta escríbanos a <a href="mailto:votabiendominicana@gmail.com">votabiendominicana@gmail.com</a> para su rectificación,
+                                actualización o supresión. Para mayor información consulte nuestros
+                                Términos y Condiciones de Uso. Todos los derechos reservados.© Grupo Acción Cristiana 2020.
+                            </div>
+                        </div>
+                        <div class="row advance-search" style="display:none">
+                            <div class="col-md-4 mb-3">
+                                <label for="firstName">Partido</label>
+                                <select name="PartyId" id="PartyId" class="form-control"><option value="">-- SELECCIONE --</option>
+<option value="5">Partido Revolucionario Dominicano</option>
+<option value="6">Fuerza del Pueblo</option>
+<option value="7">Alianza Pa&#xED;s</option>
+<option value="8">Alianza por la Democracia</option>
+<option value="9">Bloque Institucional Socialista Dem&#xF3;crata</option>
+<option value="10">Fuerza Nacional Progresista</option>
+<option value="11">Movimiento Democratico Alternativo</option>
+<option value="12">Pa&#xED;s Posible</option>
+<option value="13">Partido C&#xED;vico Renovador</option>
+<option value="14">Partido de Acci&#xF3;n Liberal</option>
+<option value="15">Partido Dem&#xF3;crata Institucional</option>
+<option value="16">Partido Nacional Voluntad Ciudadana</option>
+<option value="17">Partido Quisqueyano Dem&#xF3;crata Cristiano</option>
+<option value="18">Partido Frente Amplio</option>
+<option value="2">Partido de la Liberaci&#xF3;n Dominicana</option>
+<option value="3">Partido Revolucionario Moderno</option>
+<option value="4">Partido Reformista Social Cristiano</option>
+</select>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="PositionId" class="">Posición a la que aspira</label>
+                                <select name="PositionId" class="form-control"><option value="">-- SELECCIONE --</option>
+<option value="3">Candidato a Vice-Presidente</option>
+<option value="4">Candidato a Senador</option>
+<option value="5">Candidato a Diputado</option>
+<option value="2">Candidato a Presidente</option>
+</select>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="DistrictId" class="">Circunscripción</label>
+                                <select name="DistrictId" class="form-control"><option value="">-- SELECCIONE --</option>
+<option value="2">1ra. Circunscripci&#xF3;n</option>
+<option value="3">2da. Circunscripci&#xF3;n</option>
+<option value="4">3ra. Circunscripci&#xF3;n</option>
+<option value="5">4ta. Circunscripci&#xF3;n</option>
+<option value="6">5ta. Circunscripci&#xF3;n</option>
+<option value="7">6ta. Circunscripci&#xF3;n</option>
+</select>
+                            </div>
+                        </div>
+                        <div class="row advance-search" style="display:none">
+                            <div class="col-md-4 mb-3">
+                                <label for="firstName" style="font-size:small">DERECHO A LA VIDA</label>
+                                <select class="form-control" name="ProLifeStateId"><option value="">-- SELECCIONE --</option>
+<option value="1">SI</option>
+<option value="2">NO</option>
+<option value="3">Ambiguo</option>
+<option value="4">Desconocida</option>
+</select>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="firstName" style="font-size:small">LECTURA DE LA BIBLIA</label>
+                                <select class="form-control" name="Law4400StateId"><option value="">-- SELECCIONE --</option>
+<option value="1">SI</option>
+<option value="2">NO</option>
+<option value="3">Ambiguo</option>
+<option value="4">Desconocida</option>
+</select>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="firstName" style="font-size:small">RECHAZO A LA IDEOLOGIA DE GENERO</label>
+                                <select class="form-control" name="DepartmentalOrderStateId"><option value="">-- SELECCIONE --</option>
+<option value="1">SI</option>
+<option value="2">NO</option>
+<option value="3">Ambiguo</option>
+<option value="4">Desconocida</option>
+</select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <b>LEYENDA</b>
+                            </div>
+                            <div class="col-lg-3 pt-2 text-center">
+                                <small>DE ACUERDO</small><br />
+                                <img src="/img/checkmark.png" style="height:35px; width:65px" />
+                            </div>
+                            <div class="col-lg-3 pt-2 text-center">
+                                <small>EN DESACUERDO</small><br />
+                                <img src="/img/wrongmark.png" style="height:35px; width:65px" />
+                            </div>
+                            <div class="col-lg-3 pt-2 text-center">
+                                <small>AMBIGUO</small><br />
+                                <img src="/img/alertmark.png" style="height:35px; width:65px" />
+                            </div>
+                            <div class="col-lg-3 pt-2 text-center">
+                                <small>DESCONOCIDO</small><br />
+                                <img src="/img/questionmark.png" style="height:35px; width:65px" />
+                            </div>
+                        </div>
+                        <hr class="mb-4" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-sm-12 col-md-5"><div style="float: left">Mostrando 3 de 10 para 110 registros</div></div>
+            <div class="col-sm-12 col-md-7">
+                <ul class="pagination" style="float: right"></ul>
+            </div>
+        </div>
+
+        <div class="card-deck mb-3 text-center">
+                    <div class="card mb-4 shadow-sm">
+                        <div>
+                            <a href="/Candidate/SearchDetails/e249cc9b-ddb7-4f89-97ce-82d134366e94">
+                                <img src="/public/profile/e249cc9b-ddb7-4f89-97ce-82d134366e94_74996753_483869702471234_422291307780636672_o.jpg" style="width:100%; height:100%; min-height:350px; min-width: 350px; max-height: 350px; max-width: 350px" />
+                            </a>
+                            <img title="PLD - Partido de la Liberaci&#xF3;n Dominicana" src="/public/logos/PLD.png" style="border-radius: 50%; height: 50px; left: 10px; top:10px; width:50px;position: absolute; z-index: 5;" />
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title pricing-card-title">
+                                Gonzalo Castillo Terrero<br/><br/>
+                            </h5>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Candidato a Presidente</li>
+                                <li><small><strong>PLD - Partido de la Liberaci&#xF3;n Dominicana</strong></small></li>
+                                <li>NIVEL NACIONAL</li>
+                            </ul>
+                            <h6>Posiciones</h6>
+                            <br />
+                            <table class="table">
+                                <tr>
+                                    <td style="text-align:left; font-weight:bold; font-size:13px">DERECHO A LA VIDA</td>
+                                    <td style="width:100px; vertical-align: middle; text-align:center; font-weight:bold; color:white;vertical-align: middle !important;"><img title="Ambiguo" src="/public/answers/alertmark.png" style="height:50px; width:100px" /></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:left; font-weight:bold; font-size:13px">LECTURA DE LA BIBLIA</td>
+                                    <td style="width:100px; vertical-align: middle; text-align:center; font-weight:bold; color:white;vertical-align: middle !important;"><img title="Desconocida" src="/public/answers/questionmark.png" style="height:50px; width:100px"/></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:left; font-weight:bold; font-size:13px">RECHAZO A LA IDEOLOGIA DE GENERO</td>
+                                    <td style="width:100px; vertical-align: middle; text-align:center; font-weight:bold; color:white;vertical-align: middle !important;"><img title="Desconocida" src="/public/answers/questionmark.png" style="height:50px; width:100px"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <a href="/Candidate/SearchDetails/e249cc9b-ddb7-4f89-97ce-82d134366e94" class="btn btn-lg btn-block btn-outline-primary">Ver Detalles</a>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div>
+                            <a href="/Candidate/SearchDetails/39ab8629-88c8-4442-b7e8-8fccd70cbc9f">
+                                <img src="/public/profile/39ab8629-88c8-4442-b7e8-8fccd70cbc9f_98309128_4177219182289998_3058069160597651456_n.jpg" style="width:100%; height:100%; min-height:350px; min-width: 350px; max-height: 350px; max-width: 350px" />
+                            </a>
+                            <img title="PRM - Partido Revolucionario Moderno" src="/public/logos/PRM.png" style="border-radius: 50%; height: 50px; left: 10px; top:10px; width:50px;position: absolute; z-index: 5;" />
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title pricing-card-title">
+                                Luis Rodolfo Abinader Corona (Luis Abinader)
+                            </h5>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Candidato a Presidente</li>
+                                <li><small><strong>PRM - Partido Revolucionario Moderno</strong></small></li>
+                                <li>NIVEL NACIONAL</li>
+                            </ul>
+                            <h6>Posiciones</h6>
+                            <br />
+                            <table class="table">
+                                <tr>
+                                    <td style="text-align:left; font-weight:bold; font-size:13px">DERECHO A LA VIDA</td>
+                                    <td style="width:100px; vertical-align: middle; text-align:center; font-weight:bold; color:white;vertical-align: middle !important;"><img title="NO" src="/public/answers/wornmark.png" style="height:50px; width:100px" /></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:left; font-weight:bold; font-size:13px">LECTURA DE LA BIBLIA</td>
+                                    <td style="width:100px; vertical-align: middle; text-align:center; font-weight:bold; color:white;vertical-align: middle !important;"><img title="SI" src="/public/answers/checkmark.png" style="height:50px; width:100px"/></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:left; font-weight:bold; font-size:13px">RECHAZO A LA IDEOLOGIA DE GENERO</td>
+                                    <td style="width:100px; vertical-align: middle; text-align:center; font-weight:bold; color:white;vertical-align: middle !important;"><img title="Ambiguo" src="/public/answers/alertmark.png" style="height:50px; width:100px"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <a href="/Candidate/SearchDetails/39ab8629-88c8-4442-b7e8-8fccd70cbc9f" class="btn btn-lg btn-block btn-outline-primary">Ver Detalles</a>
+                    </div>
+                    <div class="card mb-4 shadow-sm">
+                        <div>
+                            <a href="/Candidate/SearchDetails/991b36e0-bc9b-45e9-ac28-513a203b50c1">
+                                <img src="/public/profile/991b36e0-bc9b-45e9-ac28-513a203b50c1_guillermo moreno2.jpg" style="width:100%; height:100%; min-height:350px; min-width: 350px; max-height: 350px; max-width: 350px" />
+                            </a>
+                            <img title="ALPAIS - Alianza Pa&#xED;s" src="/public/logos/ALPAIS.png" style="border-radius: 50%; height: 50px; left: 10px; top:10px; width:50px;position: absolute; z-index: 5;" />
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title pricing-card-title">
+                                Guillermo Antonio Moreno García<br/><br/>
+                            </h5>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Candidato a Presidente</li>
+                                <li><small><strong>ALPAIS - Alianza Pa&#xED;s</strong></small></li>
+                                <li>NIVEL NACIONAL</li>
+                            </ul>
+                            <h6>Posiciones</h6>
+                            <br />
+                            <table class="table">
+                                <tr>
+                                    <td style="text-align:left; font-weight:bold; font-size:13px">DERECHO A LA VIDA</td>
+                                    <td style="width:100px; vertical-align: middle; text-align:center; font-weight:bold; color:white;vertical-align: middle !important;"><img title="NO" src="/public/answers/wornmark.png" style="height:50px; width:100px" /></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:left; font-weight:bold; font-size:13px">LECTURA DE LA BIBLIA</td>
+                                    <td style="width:100px; vertical-align: middle; text-align:center; font-weight:bold; color:white;vertical-align: middle !important;"><img title="Desconocida" src="/public/answers/questionmark.png" style="height:50px; width:100px"/></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:left; font-weight:bold; font-size:13px">RECHAZO A LA IDEOLOGIA DE GENERO</td>
+                                    <td style="width:100px; vertical-align: middle; text-align:center; font-weight:bold; color:white;vertical-align: middle !important;"><img title="Desconocida" src="/public/answers/questionmark.png" style="height:50px; width:100px"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <a href="/Candidate/SearchDetails/991b36e0-bc9b-45e9-ac28-513a203b50c1" class="btn btn-lg btn-block btn-outline-primary">Ver Detalles</a>
+                    </div>
+                    <div class="card" style="border: 0px !important">
+                    </div>
+                    <div class="card" style="border: 0px !important">
+                    </div>
+                    <div class="card" style="border: 0px !important">
+                    </div>
+        </div>
+
+        <div class="row">
+                <div class="col-sm-12 col-md-5"><div style="float: left">Mostrando 3 de 10 para 110 registros</div></div>
+            <div class="col-sm-12 col-md-7">
+                <ul class="pagination" style="float: right"></ul>
+            </div>
+        </div>
+        <div class="pt-4 my-md-5 pt-md-5 border-top text-center">
+            <img src="/landingpage/assets/img/Recurso-1-2048x797.png" class="img-fluid" style="height:150px" />
+            <p class="pt-4">©2020 - Acción Cristiana. Todos los Derechos Reservados</p>
+            <p style="padding-top:15px">
+                <a href="https://www.facebook.com/VotaBienRD" target="_blank"><img title="Siguenos a traves de Facebook" src="/img/facebook.png" /></a> &nbsp;
+                <a href="https://twitter.com/votabienrd1" target="_blank"><img title="Siguenos a traves de Twitter" src="/img/twitter.png" /></a> &nbsp;
+                <a href="https://www.instagram.com/votabienrd" target="_blank"><img title="Siguenos a traves de Instagram" src="/img/instagram.png" /></a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
